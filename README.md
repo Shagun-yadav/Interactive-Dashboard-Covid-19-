@@ -82,3 +82,22 @@ To create an easy-to-navigate dashboard that:
 - **Active Cases:**  
   ```powerquery
   = [TotalCases] - [TotalDeaths] - [TotalRecovered]
+
+- **Death Rate %:**  
+  ```powerquery
+  = ([TotalDeaths] / [TotalCases]) * 100
+
+- **Recovery Rate %:**  
+  ```powerquery
+  = ([TotalRecovered] / [TotalCases]) * 100
+
+- **Optional: Wave Grouping (Custom Reporting Periods)**  
+  ```powerquery
+  = if [TotalCases] < 100000 then "Wave 1" 
+  else if [TotalCases] < 1000000 then "Wave 2" 
+  else "Wave 3"
+
+---
+
+## 📌 Preview
+![Dashboard Preview](https://github.com/Shagun-yadav/Interactive-Dashboard-Covid-19-/blob/main/Covid-19%20Dashboard.png)
